@@ -1,0 +1,17 @@
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Core.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Core.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Common.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Data.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Entities.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Helpers.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Common.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Data.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Entities.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\TheAtlanticBank.Helpers.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\obj\Debug\TheAtlanticBank.Core.csproj.AssemblyReference.cache
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\obj\Debug\TheAtlanticBank.Core.csproj.CoreCompileInputs.cache
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\obj\Debug\TheAtlanticBank.Core.csproj.CopyComplete
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\obj\Debug\TheAtlanticBank.Core.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Core\obj\Debug\TheAtlanticBank.Core.pdb

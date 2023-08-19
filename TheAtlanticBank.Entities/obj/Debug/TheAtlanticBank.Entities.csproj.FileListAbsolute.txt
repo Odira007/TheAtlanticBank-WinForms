@@ -1,0 +1,9 @@
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\bin\Debug\TheAtlanticBank.Entities.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\bin\Debug\TheAtlanticBank.Entities.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\bin\Debug\TheAtlanticBank.Common.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\bin\Debug\TheAtlanticBank.Common.pdb
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\obj\Debug\TheAtlanticBank.Entities.csproj.AssemblyReference.cache
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\obj\Debug\TheAtlanticBank.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\obj\Debug\TheAtlanticBank.Entities.csproj.CopyComplete
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\obj\Debug\TheAtlanticBank.Entities.dll
+C:\Users\ODIRA.DESKTOP-II4QM4T\source\repos\TheAtlanticBank-WinForms\TheAtlanticBank.Entities\obj\Debug\TheAtlanticBank.Entities.pdb
