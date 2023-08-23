@@ -149,6 +149,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Equal(13000.0M, _account.Balance);
             Assert.Equal(15000.0M, beneficiaryAccount.Balance);
+            _message.WriteLine("Created successful transfer");
         }
 
         [Fact]
@@ -169,6 +170,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Throws<InvalidOperationException>(() => 
                                 _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, 21000.0M));
+            _message.WriteLine("Check insufficient funds for transfer");
         }
 
         [Fact]
@@ -189,6 +191,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Throws<InvalidOperationException>(() => 
                                     _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, 19500.0M));
+            _message.WriteLine("Ensure savings account cannot transfer past minimum balance for savings - 1000");
         }
 
         [Fact]
@@ -209,6 +212,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Throws<FormatException>(() =>
                                     _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, -10500.0M));
+            _message.WriteLine("Check invalid transfer amount");
         }
     }
 }
