@@ -97,7 +97,7 @@ namespace TheAtlanticBank.Core.Tests
 
             //Assert
             Assert.Throws<InvalidOperationException>(() => _sut.Withdraw(_account.AccountId, 19500.0M));
-            _message.WriteLine("Ensure savings account cannot withdraw past min balance of 1000");
+            _message.WriteLine("Ensured that savings account cannot withdraw past min balance of 1000");
         }
 
         [Fact]
@@ -111,7 +111,7 @@ namespace TheAtlanticBank.Core.Tests
 
             //Assert
             Assert.Throws<FormatException>(() => _sut.Withdraw(_account.AccountId, -500.0M));
-            _message.WriteLine("Check for negative input value");
+            _message.WriteLine("Checked for negative withdrawal amount");
         }
 
         [Fact]
@@ -125,7 +125,7 @@ namespace TheAtlanticBank.Core.Tests
 
             //Assert
             Assert.Throws<InvalidOperationException>(() => _sut.Withdraw(_account.AccountId, 21000.0M));
-            _message.WriteLine("Check insufficient funds");
+            _message.WriteLine("Checked for insufficient funds for withdrawal");
         }
 
         [Fact]
@@ -170,7 +170,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Throws<InvalidOperationException>(() => 
                                 _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, 21000.0M));
-            _message.WriteLine("Check insufficient funds for transfer");
+            _message.WriteLine("Checked for insufficient funds for transfer");
         }
 
         [Fact]
@@ -191,7 +191,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Throws<InvalidOperationException>(() => 
                                     _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, 19500.0M));
-            _message.WriteLine("Ensure savings account cannot transfer past minimum balance for savings - 1000");
+            _message.WriteLine("Ensured that savings account cannot transfer past minimum balance for savings - 1000");
         }
 
         [Fact]
@@ -212,7 +212,7 @@ namespace TheAtlanticBank.Core.Tests
             //Assert
             Assert.Throws<FormatException>(() =>
                                     _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, -10500.0M));
-            _message.WriteLine("Check invalid transfer amount");
+            _message.WriteLine("Checked for invalid transfer amount");
         }
     }
 }
