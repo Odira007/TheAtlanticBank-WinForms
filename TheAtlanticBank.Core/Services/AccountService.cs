@@ -42,7 +42,7 @@ namespace TheAtlanticBank.Core.Services
 
         public void Deposit(int accountId, decimal amount)
         {
-            if (amount == 0) throw new Exception("Why?");
+            if (amount <= 0) throw new FormatException("Why?");
 
             var account = DataStore.accounts.First(acc => acc.AccountId == accountId);
             account.Balance += amount;
@@ -50,7 +50,7 @@ namespace TheAtlanticBank.Core.Services
             _transactionService.CreateTransaction(description, amount, accountId);
         }
 
-        public void Withdraw(int accountId, decimal amount)
+        public decimal Withdraw(int accountId, decimal amount)
         {
             var account = DataStore.accounts.First(acc => acc.AccountId == accountId);
 
@@ -62,11 +62,20 @@ namespace TheAtlanticBank.Core.Services
                 {
                     throw new InvalidOperationException("Insufficient Funds");
                 }
-                account.Balance -= amount;
             }
+            else if (account.AccountType == AccountType.Current)
+            {
+                if (account.Balance < amount)
+                {
+                    throw new Exception("Insufficient funds");
+                }
+            }
+
             account.Balance -= amount;
             var description = $"Withdrawal by {Authenticate.customer.FullName}";
             _transactionService.CreateTransaction(description, amount, accountId);
+
+            return account.Balance;
         }
 
         public void Transfer(int sourceId, int beneficiaryId, decimal amount)
@@ -79,12 +88,17 @@ namespace TheAtlanticBank.Core.Services
             if (amount > sourceAccount.Balance) throw new InvalidOperationException("Insufficient Funds!");
             if (sourceAccount.AccountType == AccountType.Savings)
             {
-                if (sourceAccount.Balance <= sourceAccount.MinBalance)
+                if (sourceAccount.Balance - amount < sourceAccount.MinBalance)
                 {
                     throw new InvalidOperationException("Insufficient Funds");
                 }
-                sourceAccount.Balance -= amount;
-                destinationAccount.Balance += amount;
+            }
+            else if (sourceAccount.AccountType == AccountType.Current)
+            {
+                if (sourceAccount.Balance < amount)
+                {
+                    throw new Exception("Insufficient funds");
+                }
             }
             sourceAccount.Balance -= amount;
             destinationAccount.Balance += amount;

@@ -25,6 +25,6 @@ namespace TheAtlanticBank.Entities
         public AccountType AccountType { get; set; }
         public string DateOfCreation { get; set; }
         public decimal Balance { get; set; }
-        public readonly decimal MinBalance = 1000.00M;
+        public readonly decimal MinBalance = 1000.0M;
     }
 }

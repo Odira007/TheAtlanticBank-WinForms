@@ -27,7 +27,7 @@ namespace TheAtlanticBank.Core.Interfaces
         /// </summary>
         /// <param name="accountId"></param>
         /// <param name="amount"></param>
-        void Withdraw(int accountId, decimal amount);
+        decimal Withdraw(int accountId, decimal amount);
 
         /// <summary>
         /// Creates a transfer transaction

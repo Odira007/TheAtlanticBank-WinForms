@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAtlanticBank.Helpers", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAtlanticBank", "TheAtlanticBank\TheAtlanticBank.csproj", "{098C4827-477A-4C25-90D1-9D729D60D6CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheAtlanticBank.Core.Tests", "TheAtlanticBank.Core.Tests\TheAtlanticBank.Core.Tests.csproj", "{7D938C84-EC10-4622-B3A4-CFE03EEAEC00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{098C4827-477A-4C25-90D1-9D729D60D6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{098C4827-477A-4C25-90D1-9D729D60D6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{098C4827-477A-4C25-90D1-9D729D60D6CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D938C84-EC10-4622-B3A4-CFE03EEAEC00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D938C84-EC10-4622-B3A4-CFE03EEAEC00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D938C84-EC10-4622-B3A4-CFE03EEAEC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D938C84-EC10-4622-B3A4-CFE03EEAEC00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
