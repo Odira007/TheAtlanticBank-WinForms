@@ -18,6 +18,7 @@ namespace TheAtlanticBank.Core.Tests
         private readonly ITestOutputHelper _message;
         private Customer _customer;
         private Account _account;
+        private Account _beneficiaryAccount;
 
         public AccountServiceShould(ITestOutputHelper message)
         {
@@ -39,14 +40,23 @@ namespace TheAtlanticBank.Core.Tests
             DataStore.accounts.Add(_account);
         }
 
+        public void SetBeneficiary()
+        {
+            _beneficiaryAccount = new Account(2, "Odira Ikewelugo", "2156739543", AccountType.Current, 2)
+            {
+                Balance = 8000.0M
+            };
+            DataStore.accounts.Add(_beneficiaryAccount);
+        }
+
 
         [Fact]
         [Trait("Category", "Transaction")]
         public void CheckDepositSuccess()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
             var expected = 25000.0M;
 
@@ -62,8 +72,9 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckDepositFailure()
         {
-            //Arrange
             DataStore.accounts.Clear();
+
+            //Arrange
             SetUp();
 
             //Assert
@@ -75,9 +86,9 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckWithdrawalSuccess()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
             var expected = 15000.0M;
 
@@ -90,9 +101,9 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckMinBalanceForSavingsAccountReached()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
 
             //Assert
@@ -104,9 +115,9 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckInvalidWithdrawalAmount()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
 
             //Assert
@@ -118,9 +129,9 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckWithdrawalAmountGreaterThanBalance()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
 
             //Assert
@@ -132,23 +143,18 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckTransferSuccess()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
-
-            var beneficiaryAccount = new Account(2, "Odira Ikewelugo", "2156739543", AccountType.Current, 2)
-            {
-                Balance = 8000.0M
-            };
-            DataStore.accounts.Add(beneficiaryAccount);
+            SetBeneficiary();
 
             //Act
-            _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId,  7000.0M);
+            _sut.Transfer(_account.AccountId, _beneficiaryAccount.AccountId,  7000.0M);
 
             //Assert
             Assert.Equal(13000.0M, _account.Balance);
-            Assert.Equal(15000.0M, beneficiaryAccount.Balance);
+            Assert.Equal(15000.0M, _beneficiaryAccount.Balance);
             _message.WriteLine("Created successful transfer");
         }
 
@@ -156,20 +162,15 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckTransferAmountGreaterThanBalance()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
-
-            var beneficiaryAccount = new Account(2, "Odira Ikewelugo", "2156739543", AccountType.Current, 2)
-            {
-                Balance = 8000.0M
-            };
-            DataStore.accounts.Add(beneficiaryAccount);
+            SetBeneficiary();
 
             //Assert
             Assert.Throws<InvalidOperationException>(() => 
-                                _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, 21000.0M));
+                                _sut.Transfer(_account.AccountId, _beneficiaryAccount.AccountId, 21000.0M));
             _message.WriteLine("Checked for insufficient funds for transfer");
         }
 
@@ -177,20 +178,15 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckMaxTransferrableForSavingsAccountReached()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
-
-            var beneficiaryAccount = new Account(2, "Odira Ikewelugo", "2156739543", AccountType.Current, 2)
-            {
-                Balance = 8000.0M
-            };
-            DataStore.accounts.Add(beneficiaryAccount);
+            SetBeneficiary();
 
             //Assert
             Assert.Throws<InvalidOperationException>(() => 
-                                    _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, 19500.0M));
+                                    _sut.Transfer(_account.AccountId, _beneficiaryAccount.AccountId, 19500.0M));
             _message.WriteLine("Ensured that savings account cannot transfer past minimum balance for savings - 1000");
         }
 
@@ -198,20 +194,15 @@ namespace TheAtlanticBank.Core.Tests
         [Trait("Category", "Transaction")]
         public void CheckInvalidTransferAmount()
         {
-            //Arrange
             DataStore.accounts.Clear();
 
+            //Arrange
             SetUp();
-
-            var beneficiaryAccount = new Account(2, "Odira Ikewelugo", "2156739543", AccountType.Current, 2)
-            {
-                Balance = 8000.0M
-            };
-            DataStore.accounts.Add(beneficiaryAccount);
+            SetBeneficiary();
 
             //Assert
             Assert.Throws<FormatException>(() =>
-                                    _sut.Transfer(_account.AccountId, beneficiaryAccount.AccountId, -10500.0M));
+                                    _sut.Transfer(_account.AccountId, _beneficiaryAccount.AccountId, -10500.0M));
             _message.WriteLine("Checked for invalid transfer amount");
         }
     }
